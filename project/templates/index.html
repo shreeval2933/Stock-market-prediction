@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Stock Market Prediction</title>
+</head>
+<style>
+    body {
+      height: 1000px;
+      margin: 0;
+      background-image: url("https://news24online.com/wp-content/uploads/2023/05/share-market-go-up.png");
+      background-repeat: no-repeat;
+      background-size: cover;
+      /* width: 2500px; */
+      /* background-color: #cccccc;
+  background-image: linear-gradient(#abbaab, #ffffff); */
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 35px;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      color: rgb(241, 237, 236);
+      border: 2px solid #dd6767;
+      border-radius: 10px;
+      height: 60px;
+      width: 617px;
+      margin-left: 425px;
+      background-color: rgb(125, 143, 220);
+    }
+
+    .container {
+      width: 600px;
+      height: 250px;
+      border: 2px solid rgb(49, 48, 48);
+      background-color: rgb(125, 143, 220);
+      border-radius: 25px;
+
+      margin: auto;
+
+      padding: 10px;
+    }
+    .text {
+      height: 18px;
+      width: 70px;
+      border: 2px solid #d87373;
+      border-radius: 15px;
+      /* display: flex; */
+      /* flex-direction: row; */
+      padding: 8px;
+      margin-left: 50px;
+      /* margin-top: 20px; */
+    }
+    .c2{
+        display: flex;
+        /* align-items: center; */
+        justify-content: space-around;
+        
+    }
+    .button {
+      height: 40px;
+      width: 120px;
+      margin-left: 40%;
+      cursor: pointer;
+      margin-bottom: 25px;
+      margin-top:30px;
+      border: none;
+      border-radius: 10%;
+      background-color: rgb(84, 44, 44);
+      color: antiquewhite;
+      font-weight: 600;
+      font-size: 16px;
+    }
+
+    .button:hover {
+      background-color: rgb(200, 198, 94);
+      color: rgb(67, 46, 49);
+    }
+    b{
+      color: #151414;
+      margin-left: 50px;
+      margin: 10px;
+      margin-top: 20px;
+      font-size: 25px;
+    }
+    .back{
+      margin-top: 100px;
+    }
+  </style>
+
+<body>
+    <div class="back"></div>
+    <div class="header">
+        <h1>Check for tomorrow nifty price here</h1>
+    </div>
+    <div class="container">
+        <div class="c2">
+            <h2>Open</h2>
+            <h2>High</h2>
+            <h2>Low</h2>
+            <h2>Close</h2>
+        </div>
+        <form action="{{url_for('predict')}}" method="post">
+            
+            <input class="text" id="message" name="message1" rows="5" cols="10"></input>
+            <input class="text" id="message" name="message2" rows="5" cols="10"></input>
+            <input class="text" id="message" name="message3" rows="5" cols="10"></input>
+            <input class="text" id="message" name="message4" rows="5" cols="10"></input>
+
+            <br />
+            <input type="submit" value="Submit" class="button">
+            <br>
+            <b>{{prediction}}</b>
+        </form>
+
+    </div>
+</body>
+
+</html>
